@@ -1,3 +1,5 @@
+import {createCategory } from './createObjects.js';
+
 let addCategory = document.querySelector("#add-category");
 const categoryFormDialog = document.querySelector("#category-form");
 addCategory.addEventListener('click', (e)=>{
@@ -13,6 +15,9 @@ submitCategory.addEventListener('click', (e) =>
     e.preventDefault();
     const formData = new FormData(categoryForm);
     const title = formData.get("title");
+    
+
+
     categoryForm.reset();
     categoryFormDialog.close();
     console.log(title);

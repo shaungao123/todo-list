@@ -1,2 +1,5 @@
 import "./styles.css";
-import "./handleClicks.js";
+import "./handleCategory.js";
+import "./handleTodo.js"
+
+let categories = [];

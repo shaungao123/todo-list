@@ -68,3 +68,10 @@ h2 {
     background-color: green;
     color: white;
 }
+
+#content button {
+    align-self: flex-start;
+    height: auto;
+    padding: 8px 16px;
+    font-size: 16px;
+}
