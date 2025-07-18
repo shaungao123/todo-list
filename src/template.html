@@ -21,12 +21,23 @@
                 <h2>Sections</h2>
                 <button id = "add-category">Add Category</button>
             </div>
-            <button class = "category-button active">Default</button>
+            <button class = "category-button">Default</button>
         </div>
         <div id = "content">
             <h2>Todo</h2>
             <button id = "add-item">Add Item</button>
         </div>
     </div>
+
+    <dialog id = "category-form">
+        <form id = "category" action="/submit" method = "POST">
+            <fieldset>
+                <legend>Create a Category</legend>
+                <label for = "title">Title:</label>
+                <input type = "text" id = "title" name = "title" required/>
+                <button id = "submit-category">Submit</button>
+            </fieldset>
+        </form>
+    </dialog>
 </body>
 </html>
