@@ -4,8 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
+    <style>
+        #content button {
+            align-self: flex-start;
+            height: auto;
+            padding: 8px 16px;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Todo List</h1>
+    <h1 style="margin: 5px">Todo List</h1>
+    <div id = "container">
+        <div id = "sidebar">
+            <div id = "sidebar-header">
+                <h2>Sections</h2>
+                <button id = "add-category">Add Category</button>
+            </div>
+            <button class = "category-button active">Default</button>
+        </div>
+        <div id = "content">
+            <h2>Todo</h2>
+            <button id = "add-item">Add Item</button>
+        </div>
+    </div>
 </body>
 </html>
