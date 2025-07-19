@@ -17,7 +17,7 @@ submitTodo.addEventListener('click', (e) =>
         const formData = new FormData(todoForm);
         const title = formData.get("title");
         
-    
+        
     
         todoForm.reset();
         todoFormDialog.close();
