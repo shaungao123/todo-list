@@ -31,7 +31,7 @@
     </dialog>
 
     <dialog id = "todo-form">
-        <form id = "todo" action="/submit" method = "POST">
+        <form id = "todo">
             <fieldset>
                 <legend>Create a Todo Item</legend>
                 <label for = "title">Title:</label>
@@ -50,8 +50,8 @@
                     <option value = "high">high</option>
                 </select>
 
-                <button id = "submit-todo">Submit</button>
-                <button id = "cancel-todo">Cancel</button>
+                <button id = "submit-todo" type = submit>Submit</button>
+                <button id = "cancel-todo" type = submit>Cancel</button>
             </fieldset>
         </form>
     </dialog>

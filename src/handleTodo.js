@@ -20,12 +20,13 @@ cancelButton.addEventListener('click', (e) => {
 
 let submitTodo = document.querySelector("#submit-todo");
 
-submitTodo.addEventListener('click', (e) =>
+todoForm.addEventListener('submit', (e) =>
 {
         e.preventDefault();
         const formData = new FormData(todoForm);
         const title = formData.get("title");
-        const date = format(formData.get("dueDate"), "yyyy-MM-dd");
+        const fullDate = document.querySelector("#dueDate").value;
+        const date = format(new Date(fullDate), 'yyyy-MM-dd');
         const description = formData.get("notes");
         const priority = formData.get("priority");
         
@@ -34,16 +35,16 @@ submitTodo.addEventListener('click', (e) =>
         todoForm.reset();
         todoFormDialog.close();
 
-        let deleteButton = document.createElement("button");
-        deleteButton.textContent = "Delete";
-        deleteButton.addEventListener("click", ()=>{
-            for(let i = 0; i < activeCategory.todos.length; i++){
-                if(activeCategory.todos[i].id == createdTodo.id){
-                    activeCategory.todos.splice(i, 1);
-                }
-            }
-            displayCategory(activeCategory);
-        });
+        // let deleteButton = document.createElement("button");
+        // deleteButton.textContent = "Delete";
+        // deleteButton.addEventListener("click", ()=>{
+        //     for(let i = 0; i < activeCategory.todos.length; i++){
+        //         if(activeCategory.todos[i].id == createdTodo.id){
+        //             activeCategory.todos.splice(i, 1);
+        //         }
+        //     }
+        //     displayCategory(activeCategory);
+        // });
         
 
         displayCategory(activeCategory);
