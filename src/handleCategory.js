@@ -2,10 +2,19 @@ import {createCategory } from './createObjects.js';
 import { displayCategory } from './display.js';
 import { addCategoryToDom } from './addToDom.js';
 
+export let activeCategory = createCategory("Default");
+addCategoryToDom(activeCategory);
+setTimeout(() => {
+    const defaultButton = document.querySelector('.category-button');
+    if (defaultButton) {
+        defaultButton.click();
+    }
+}, 100);
+
+
 let addCategory = document.querySelector("#add-category");
 const categoryFormDialog = document.querySelector("#category-form");
 let categoryForm = document.querySelector("#category");
-let sidebar = document.querySelector("#sidebar");
 let cancelButton = document.querySelector("#cancel-category");
 
 addCategory.addEventListener('click', (e)=>{
@@ -13,7 +22,8 @@ addCategory.addEventListener('click', (e)=>{
     categoryFormDialog.showModal();
 });
 
-cancelButton.addEventListener('click', () => {
+cancelButton.addEventListener('click', (e) => {
+    e.preventDefault();
     categoryForm.reset();
     categoryFormDialog.close();
 });
@@ -28,7 +38,8 @@ categoryForm.addEventListener('submit', (e) =>
     let categoryCreated = createCategory(title);
 
     addCategoryToDom(categoryCreated);
-
+    activeCategory = categoryCreated;
+    
     categoryForm.reset();
     categoryFormDialog.close();
 
