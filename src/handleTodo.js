@@ -1,4 +1,4 @@
-import { createTodo} from './createObjects.js';
+import {createTodo} from './createObjects.js';
 
 let addTodo = document.querySelector("#add-todo");
 const todoFormDialog = document.querySelector("#todo-form");
